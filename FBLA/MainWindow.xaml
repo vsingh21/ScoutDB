@@ -1,0 +1,41 @@
+﻿<Window x:Class="FBLA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ScoutDB" Height="800" Width="1200">
+    <Window.Resources>
+        <Style TargetType="DataGrid">
+            <EventSetter Event="PreviewKeyDown" Handler="DataGrid_PreviewKeyDown"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#34495E">
+        <StackPanel Orientation="Vertical" Margin="10">
+            <!-- Title-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="ScoutDB" FontWeight="Bold" FontSize="24" Foreground="#ECF0F1" Margin="10"/>
+                <Button Grid.Column="1" Click="Help_Click" Width="30" Height="30" Margin="15" FontFamily="Segoe UI Symbol" Content="&#xE11B;" Background="Transparent" Foreground="White" BorderThickness="0"/>
+            </Grid>
+            <!--Functionality to interact with the application: rest, add, search,-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0">
+                <TextBox x:Name="searchTextBox" Width="200" Height="30" Margin="0,0,10,0" VerticalContentAlignment="Center" TextChanged="SearchTextBox_TextChanged"/>
+                <Button Click="AddPartner_Click" Width="30" Height="30" Margin="5" FontFamily="Segoe UI Symbol" Content="&#xE109;" Background="Transparent" Foreground="White" BorderThickness="0"/>
+                <Button Click="Reset_Click" Width="30" Height="30" Margin="5" FontFamily="Segoe UI Symbol" Content="&#xE149;" Background="Transparent" Foreground="White" BorderThickness="0"/>
+            </StackPanel>
+            <DataGrid Name="partnersDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Background="#ECF0F1" MouseDoubleClick="DataGrid_MouseDoubleClick" HorizontalAlignment="Stretch">
+                <!-- Column names for business details -->
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Organization" Binding="{Binding Organization}" Width="*"/>
+                    <DataGridTextColumn Header="Type" Binding="{Binding Type}" Width="Auto"/>
+                    <DataGridTextColumn Header="Resources" Binding="{Binding Resources}" Width="Auto"/>
+                    <DataGridTextColumn Header="Contact Person" Binding="{Binding ContactPerson}" Width="*"/>
+                    <DataGridTextColumn Header="Contact Email" Binding="{Binding ContactEmail}" Width="Auto"/>
+                    <DataGridTextColumn Header="Contact Phone" Binding="{Binding ContactPhone}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </StackPanel>
+    </Grid>
+</Window>

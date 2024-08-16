@@ -1,0 +1,65 @@
+<Window x:Class="FBLA.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Help" Height="600" Width="800">
+    <Grid Background="#34495E">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Text="Help" FontSize="28" FontWeight="Bold" Foreground="White" Margin="10"/>
+
+        <!-- Program Details -->
+        <StackPanel Grid.Row="1" Margin="10">
+            <TextBlock TextWrapping="Wrap" FontSize="20" FontWeight="Bold" Foreground="White">
+                How the Program Works:
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="White">
+                - Sorting: Click on any column header to sort the data grid based on that column. Click again to reverse the sorting order.
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="White">
+                - Searching: Use the search box to filter data by typing keywords. The data grid will update dynamically as you type.
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="White">
+                - Adding a Partner: Click on the plus sign button to open a window for adding a new partner.
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="White">
+                - Reset Filters: Click on the reset button to clear all filters and sorting applied to the data grid.
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="White">
+                - Editing: Double-click on a row in the data grid to edit the selected partner's details.
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="White">
+                - Deleting: Select a row in the data grid and press the Delete key to delete the selected partner.
+            </TextBlock>
+        </StackPanel>
+
+        <!-- Q&A Section -->
+        <StackPanel Grid.Row="2" Margin="10">
+            <TextBlock TextWrapping="Wrap" FontSize="20" FontWeight="Bold" Foreground="White">
+                Q&amp;A Section:
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="White">
+                Q: How can I sort the data grid based on a specific column?
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="White">
+                A: Simply click on the header of the column you wish to sort by. Clicking again will reverse the sorting order.
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="White">
+                Q: How do I search for specific entries?
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="White">
+                A: Use the search box located at the top-right corner of the window. As you type, the data grid will filter entries dynamically.
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="White">
+                Q: How can I add a new partner?
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="White">
+                A: Click on the plus sign button located next to the search box to open a window for adding a new partner.
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
